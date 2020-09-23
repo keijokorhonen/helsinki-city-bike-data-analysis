@@ -5,6 +5,9 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 years = ['2016', '2017', '2019']
 
+if not os.path.exists(f'{dir_path}/data/city-bike-raw/'):
+    os.makedirs(f'{dir_path}/data/city-bike-raw/')
+
 for year in years:
     url = f'https://dev.hsl.fi/citybikes/od-trips-{year}/od-trips-{year}.zip'
     filename = wget.download(url, f'{dir_path}/data/')
