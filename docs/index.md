@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" media="all" href="index.css" />
 ## A better Helsinki with more city bikes
 Helsinki city bikes have been widely used throughout Helsinki and have made transportation more convenient.
 Many residents have had access to this convenient service, however there are some areas of Helsinki, which do not have city bikes yet. 
