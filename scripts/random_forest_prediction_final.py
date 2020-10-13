@@ -28,8 +28,8 @@ def drop_col_feat_imp(model, X_train, y_train):
     # clone the model to have the exact same specification as the one initially trained
     model_clone = clone(model)
     # set random_state for comparability
-    random_state = 42
-    model_clone.random_state = random_state
+    # random_state = 42
+    # model_clone.random_state = random_state
     # training and scoring the benchmark model
     model_clone.fit(X_train, y_train)
     benchmark_score = model_clone.score(X_train, y_train)
@@ -51,15 +51,15 @@ def drop_col_feat_imp(model, X_train, y_train):
 
 current_folder = pathlib.Path(__file__).parent.absolute()
 main_folder = current_folder.parent
-data_folder = main_folder / "training_data"
+data_folder = main_folder / "training_data" / "withEspoo"
 results_folder = main_folder / "results"
 
-X = pd.read_csv(data_folder / "X_train.csv")
-y = pd.read_csv(data_folder / "Y_train.csv")
+X = pd.read_csv(data_folder / "X_train_e0.csv")
+y = pd.read_csv(data_folder / "Y_train_e0.csv")
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-X_pred = pd.read_csv(data_folder / "X_pred.csv")
-pred_pairs = np.loadtxt(data_folder / "train_pairs.txt", dtype=str, delimiter=",")
+X_pred = pd.read_csv(data_folder / "X_pred_e0.csv")
+pred_pairs = np.loadtxt(data_folder / "train_pairs_e0.txt", dtype=str, delimiter=",")
 predictions = pd.DataFrame(columns=y.columns)
 
 # Set the threshold for feature importance; features less important than this will not be use for training the model
@@ -73,32 +73,27 @@ with open(main_folder / 'results' / 'model_prediction_scores.csv', 'a') as outfi
 
 counter = 1
 start_time = perf_counter()
-# for column in y.columns:
-for column in ["base_to_comp_sun_morning","base_to_comp_sun_day"]:
+for column in y.columns:
     print("Predicting label: " + column)
-    model = RandomForestRegressor(n_estimators = 100, oob_score = True)
-    
+    model = RandomForestRegressor(n_estimators = 100, max_depth=5, oob_score = True, random_state=42)
     model.fit(X_train, y_train[column])    
     # Testing the model trained on all features
     orig_train_score = model.score(X_train, y_train[column])
     orig_oob_score = model.oob_score_
     orig_test_score = model.score(X_test, y_test[column])
     # Calculating the importances of the features using the drop column method    
-    importances_df = drop_col_feat_imp(model, X_train, y_train[column])
+    # importances_df = drop_col_feat_imp(model, X_train, y_train[column])
     # Pruning out all features that are less important than the threshold
     pruned_X_train = X_train.copy()
     pruned_X_test = X_test.copy()
     pruned_X_pred = X_pred.copy()
-    for index, row in importances_df.iterrows():
-        print("Importance: " + str(row['Importance']))
-        if (row['Importance'] < threshold) & (len(pruned_X_train.columns) > 25):
-            print("Index: " + str(index))
-            pruned_X_train = pruned_X_train.drop([index], axis=1)
-            print(str(pruned_X_train.columns))
-            pruned_X_test = pruned_X_test.drop([index], axis=1)
-            pruned_X_pred = pruned_X_pred.drop([index], axis=1)
+    # for index, row in importances_df.iterrows():
+    #     if (row['Importance'] < threshold) & (len(pruned_X_train.columns) > 25):
+    #         pruned_X_train = pruned_X_train.drop([index], axis=1)
+    #         pruned_X_test = pruned_X_test.drop([index], axis=1)
+    #         pruned_X_pred = pruned_X_pred.drop([index], axis=1)
     # Training the model on the pruned features and testing it
-    model.fit(pruned_X_train, y_train[column])
+    # model.fit(pruned_X_train, y_train[column])
     opt_train_score = model.score(pruned_X_train, y_train[column])
     opt_oob_score = model.oob_score_
     opt_test_score = model.score(pruned_X_test, y_test[column])
@@ -107,9 +102,9 @@ for column in ["base_to_comp_sun_morning","base_to_comp_sun_day"]:
     pred_series = pd.Series(prediction)
     predictions[column] = pred_series
     # Saving the feature importances for the label to a file
-    filename = "importances_" + column + ".csv"
-    importances_df = importances_df.sort_values('Importance', ascending=False)
-    importances_df.to_csv(results_folder / filename)
+    # filename = "importances_" + column + ".csv"
+    # importances_df = importances_df.sort_values('Importance', ascending=False)
+    # importances_df.to_csv(results_folder / filename)
     # Writing the test scores for prediction for this label into a file
     csv_line = [column, orig_train_score, orig_oob_score, orig_test_score, len(pruned_X_train.columns), opt_train_score, opt_oob_score, opt_test_score]
     with open(results_folder / 'model_prediction_scores.csv', 'a') as outfile:
