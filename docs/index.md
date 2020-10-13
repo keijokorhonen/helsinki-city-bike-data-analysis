@@ -8,7 +8,7 @@ The districts without city bikes can be seen in grey below.
 <iframe src="city_bike_network.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
-    height="800"
+    height="650"
     scrolling="no"
     seamless="seamless"
     frameborder="0">
@@ -25,7 +25,7 @@ We can predict how many rides are taken from Vuosaari to each other district.
 <iframe src="Vuosaari_outgoing.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
-    height="800"
+    height="650"
     scrolling="no"
     seamless="seamless"
     frameborder="0">
@@ -36,7 +36,7 @@ We can predict how many rides are taken to Vuosaari to each other district.
 <iframe src="Vuosaari_incoming.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
-    height="800"
+    height="650"
     scrolling="no"
     seamless="seamless"
     frameborder="0">
@@ -46,7 +46,7 @@ And use that for some statistics. Such as the net rides taken between Vuosaari a
 <iframe src="Vuosaari.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
-    height="800"
+    height="650"
     scrolling="no"
     seamless="seamless"
     frameborder="0">
