@@ -36,7 +36,7 @@ We can predict how many rides are taken from Vuosaari to each other district.
 </div>
 (For every day of the week and time of day...)
 
-We can predict how many rides are taken to Vuosaari to each other district. 
+We can predict how many rides are taken to Vuosaari from each other district. 
 <div style="text-align: center;">
 <iframe src="Vuosaari_incoming.html"
     sandbox="allow-same-origin allow-scripts"
