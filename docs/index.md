@@ -19,19 +19,19 @@ The districts without city bikes can be seen in grey below.
 ## What properties make a district use city bikes?
 Our trained machine learning algorithm considers the demographics of each district and correlates that to city bike usage statistics.
 We believe that good indicators for city bike usage are demographics of districts such as total population, unemployment rate, age distribution, number of restaurants and shops and distribution of job types among many others. In total we use 212 different parameters for our model to get the best possible result.
-<font size="+1">Testing</font>
+
  <table style="text-align: center;">
   <thead></thead>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Monday</th>
-    <th colspan="2">Tuesday</th>
-    <th colspan="2">Wednesday</th>
-    <th colspan="2">Thursday</th>
-    <th colspan="2">Friday</th>
-    <th colspan="2">Saturday</th>
-    <th colspan="2">Sunday</th>
-    <th colspan="2">Total</th>
+      <th colspan="2"><sub>Monday</sub></th>
+    <th colspan="2"><sub>Tuesday</sub></th>
+    <th colspan="2"><sub>Wednesday</sub></th>
+    <th colspan="2"><sub>Thursday</sub></th>
+    <th colspan="2"><sub>Friday</sub></th>
+    <th colspan="2"><sub>Saturday</sub></th>
+    <th colspan="2"><sub>Sunday</sub></th>
+    <th colspan="2"><sub>Total</sub></th>
   </tr>  
   <tr>
       <th style="text-align: left;">District</th>
