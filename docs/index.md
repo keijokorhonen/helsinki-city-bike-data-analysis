@@ -316,7 +316,6 @@ The following table presents the same data on the total number of rides predicte
   <tbody>
     <tr>
       <th><sub>Kaarela (205)</sub></th>
-      <td><sub>205</sub></td>
       <td><sub>6037</sub></td>
       <td><sub>6545</sub></td>
       <td><sub>10769</sub></td>
@@ -330,7 +329,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Tuomarinkylä (403)</sub></th>
-      <td><sub>403</sub></td>
       <td><sub>3748</sub></td>
       <td><sub>4228</sub></td>
       <td><sub>7931</sub></td>
@@ -344,7 +342,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Itä-Pakila (405)</sub></th>
-      <td><sub>405</sub></td>
       <td><sub>3984</sub></td>
       <td><sub>5045</sub></td>
       <td><sub>9190</sub></td>
@@ -358,7 +355,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Pukinmäki (502)</sub></th>
-      <td><sub>502</sub></td>
       <td><sub>5161</sub></td>
       <td><sub>5897</sub></td>
       <td><sub>9725</sub></td>
@@ -372,7 +368,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Malmi (503)</sub></th>
-      <td><sub>503</sub></td>
       <td><sub>4525</sub></td>
       <td><sub>4707</sub></td>
       <td><sub>7680</sub></td>
@@ -386,7 +381,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Suutarila (504)</sub></th>
-      <td><sub>504</sub></td>
       <td><sub>1551</sub></td>
       <td><sub>2677</sub></td>
       <td><sub>4104</sub></td>
@@ -400,7 +394,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Puistola (505)</sub></th>
-      <td><sub>505</sub></td>
       <td><sub>1636</sub></td>
       <td><sub>2511</sub></td>
       <td><sub>4148</sub></td>
@@ -414,7 +407,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Jakomäki (506)</sub></th>
-      <td><sub>506</sub></td>
       <td><sub>2018</sub></td>
       <td><sub>3104</sub></td>
       <td><sub>4787</sub></td>
@@ -428,7 +420,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Mellunkylä (703)</sub></th>
-      <td><sub>703</sub></td>
       <td><sub>5400</sub></td>
       <td><sub>9721</sub></td>
       <td><sub>13204</sub></td>
@@ -442,7 +433,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Vuosaari (704)</sub></th>
-      <td><sub>704</sub></td>
       <td><sub>3824</sub></td>
       <td><sub>8620</sub></td>
       <td><sub>10919</sub></td>
@@ -456,7 +446,6 @@ The following table presents the same data on the total number of rides predicte
     </tr>
     <tr>
       <th><sub>Östersundom (801)</sub></th>
-      <td><sub>801</sub></td>
       <td><sub>4017</sub></td>
       <td><sub>3313</sub></td>
       <td><sub>7908</sub></td>
