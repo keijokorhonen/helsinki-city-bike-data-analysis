@@ -20,6 +20,14 @@ The districts without city bikes can be seen in grey below.
 Our trained machine learning algorithm considers the demographics of each district and correlates that to city bike usage statistics.
 We believe that good indicators for city bike usage are demographics of districts such as total population, unemployment rate, age distribution, number of restaurants and shops and distribution of job types among many others. In total we use 212 different parameters for our model to get the best possible result.
 
+<div style="text-align: center;">
+<iframe src="rides_by_day.html"
+    width="900"
+    scrolling="no"
+    seamless="seamless"
+    frameborder="0">
+</iframe>
+</div>
 
 ## Let's see what our model can do
 We will look at one example district not in the city bike network yet, Vuosaari.
