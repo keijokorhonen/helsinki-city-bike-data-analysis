@@ -6,7 +6,7 @@ This way it will be possible to anticipate what expanding the network really mea
 
 The districts without city bikes can be seen in grey below.
 <div style="text-align: center;">
-<iframe src="city_bike_network.html"
+<iframe src="city_bike_network_noespoo.html"
     sandbox="allow-same-origin allow-scripts"
     width="616"
     height="634"
