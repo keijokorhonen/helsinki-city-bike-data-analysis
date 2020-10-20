@@ -38,6 +38,483 @@ In order to predict the use of city bikes in new districts, our system considers
 * voting patterns
   * percentage voting SDP, KOK, VIHR, RKP, VAS, PS or other
 
+## Describing city bike usage in the existing districts
+Since the predictive machine learning model that we developed bases it predictions on historical data from thos districts that are currently within the city bike system, it is useful – and perhaps even crucial – for the evaluation of the predictions to have some kind of a baseline to compare to. For that purpose – and as a demonstration of what kind of data the model's training is based, we will first present some statistics from the existing city bike districts from the city bike season (a period of 214 days from April to October) of  2019. The following table presents the total number of rides departing from and ending in each of the districts with a percentage breakdown by the day of the week:
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th colspan="2"><sub>Monday</sub></th>
+      <th colspan="2"><sub>Tuesday</sub></th>
+      <th colspan="2"><sub>Wednesday</sub></th>
+      <th colspan="2"><sub>Thursday</sub></th>
+      <th colspan="2"><sub>Friday</sub></th>
+      <th colspan="2"><sub>Saturday</sub></th>
+      <th colspan="2"><sub>Sunday</sub></th>
+      <th colspan="2"><sub>Total</sub></th>
+    </tr>  
+    <tr>
+      <th><sub>District</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><sub>Vironniemi (101)</sub></th>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>16.2%</sub></td>
+      <td><sub>16.2%</sub></td>
+      <td><sub>17.0%</sub></td>
+      <td><sub>17.0%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>16.0%</sub></td>
+      <td><sub>14.8%</sub></td>
+      <td><sub>14.3%</sub></td>
+      <td><sub>11.6%</sub></td>
+      <td><sub>11.3%</sub></td>
+      <td><sub>9.2%</sub></td>
+      <td><sub>9.8%</sub></td>
+      <td><sub>421093</sub></td>
+      <td><sub>413942</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Ullanlinna (102)</sub></th>
+      <td><sub>14.0%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.0%</sub></td>
+      <td><sub>16.8%</sub></td>
+      <td><sub>16.7%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>14.2%</sub></td>
+      <td><sub>14.0%</sub></td>
+      <td><sub>13.7%</sub></td>
+      <td><sub>13.7%</sub></td>
+      <td><sub>10.6%</sub></td>
+      <td><sub>11.0%</sub></td>
+      <td><sub>282954</sub></td>
+      <td><sub>271475</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Kampinmalmi (103)</sub></th>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>16.8%</sub></td>
+      <td><sub>16.9%</sub></td>
+      <td><sub>15.9%</sub></td>
+      <td><sub>15.8%</sub></td>
+      <td><sub>14.3%</sub></td>
+      <td><sub>14.3%</sub></td>
+      <td><sub>11.3%</sub></td>
+      <td><sub>11.3%</sub></td>
+      <td><sub>10.3%</sub></td>
+      <td><sub>10.2%</sub></td>
+      <td><sub>637419</sub></td>
+      <td><sub>639288</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Taka-Töölö (104)</sub></th>
+      <td><sub>14.4%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>14.0%</sub></td>
+      <td><sub>12.9%</sub></td>
+      <td><sub>13.1%</sub></td>
+      <td><sub>12.0%</sub></td>
+      <td><sub>11.8%</sub></td>
+      <td><sub>191192</sub></td>
+      <td><sub>190792</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Lauttasaari (105)</sub></th>
+      <td><sub>15.2%</sub></td>
+      <td><sub>14.9%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>16.5%</sub></td>
+      <td><sub>16.5%</sub></td>
+      <td><sub>15.8%</sub></td>
+      <td><sub>15.9%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>14.2%</sub></td>
+      <td><sub>11.7%</sub></td>
+      <td><sub>12.1%</sub></td>
+      <td><sub>11.4%</sub></td>
+      <td><sub>10.8%</sub></td>
+      <td><sub>128799</sub></td>
+      <td><sub>129174</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Reijola (201)</sub></th>
+      <td><sub>15.5%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>16.6%</sub></td>
+      <td><sub>16.5%</sub></td>
+      <td><sub>15.9%</sub></td>
+      <td><sub>16.0%</sub></td>
+      <td><sub>13.6%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>10.8%</sub></td>
+      <td><sub>11.1%</sub></td>
+      <td><sub>11.6%</sub></td>
+      <td><sub>11.2%</sub></td>
+      <td><sub>154524</sub></td>
+      <td><sub>157072</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Munkkiniemi (202)</sub></th>
+      <td><sub>14.4%</sub></td>
+      <td><sub>14.2%</sub></td>
+      <td><sub>15.2%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>14.9%</sub></td>
+      <td><sub>13.3%</sub></td>
+      <td><sub>13.5%</sub></td>
+      <td><sub>12.9%</sub></td>
+      <td><sub>13.6%</sub></td>
+      <td><sub>13.3%</sub></td>
+      <td><sub>13.0%</sub></td>
+      <td><sub>79998</sub></td>
+      <td><sub>75413</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Haaga (203)</sub></th>
+      <td><sub>15.5%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.9%</sub></td>
+      <td><sub>16.2%</sub></td>
+      <td><sub>16.2%</sub></td>
+      <td><sub>16.1%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>13.1%</sub></td>
+      <td><sub>13.4%</sub></td>
+      <td><sub>11.6%</sub></td>
+      <td><sub>11.9%</sub></td>
+      <td><sub>12.2%</sub></td>
+      <td><sub>11.7%</sub></td>
+      <td><sub>54305</sub></td>
+      <td><sub>54163</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Pitäjänmäki (204)</sub></th>
+      <td><sub>16.2%</sub></td>
+      <td><sub>16.8%</sub></td>
+      <td><sub>17.2%</sub></td>
+      <td><sub>17.3%</sub></td>
+      <td><sub>17.6%</sub></td>
+      <td><sub>17.2%</sub></td>
+      <td><sub>16.3%</sub></td>
+      <td><sub>16.5%</sub></td>
+      <td><sub>13.2%</sub></td>
+      <td><sub>13.2%</sub></td>
+      <td><sub>9.4%</sub></td>
+      <td><sub>9.2%</sub></td>
+      <td><sub>10.1%</sub></td>
+      <td><sub>9.8%</sub></td>
+      <td><sub>26023</sub></td>
+      <td><sub>25212</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Kallio (301)</sub></th>
+      <td><sub>14.4%</sub></td>
+      <td><sub>14.4%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>16.3%</sub></td>
+      <td><sub>16.3%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>13.0%</sub></td>
+      <td><sub>12.9%</sub></td>
+      <td><sub>10.8%</sub></td>
+      <td><sub>11.2%</sub></td>
+      <td><sub>301398</sub></td>
+      <td><sub>296963</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Alppiharju (302)</sub></th>
+      <td><sub>14.2%</sub></td>
+      <td><sub>14.2%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>13.9%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>13.5%</sub></td>
+      <td><sub>13.2%</sub></td>
+      <td><sub>12.0%</sub></td>
+      <td><sub>11.9%</sub></td>
+      <td><sub>119889</sub></td>
+      <td><sub>127831</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Vallila (303)</sub></th>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>16.6%</sub></td>
+      <td><sub>16.5%</sub></td>
+      <td><sub>16.8%</sub></td>
+      <td><sub>16.6%</sub></td>
+      <td><sub>16.2%</sub></td>
+      <td><sub>16.3%</sub></td>
+      <td><sub>13.9%</sub></td>
+      <td><sub>14.4%</sub></td>
+      <td><sub>10.3%</sub></td>
+      <td><sub>10.4%</sub></td>
+      <td><sub>10.6%</sub></td>
+      <td><sub>10.3%</sub></td>
+      <td><sub>160854</sub></td>
+      <td><sub>172295</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Pasila (304)</sub></th>
+      <td><sub>16.0%</sub></td>
+      <td><sub>16.2%</sub></td>
+      <td><sub>17.3%</sub></td>
+      <td><sub>17.4%</sub></td>
+      <td><sub>17.5%</sub></td>
+      <td><sub>17.6%</sub></td>
+      <td><sub>17.2%</sub></td>
+      <td><sub>17.2%</sub></td>
+      <td><sub>14.6%</sub></td>
+      <td><sub>14.6%</sub></td>
+      <td><sub>9.0%</sub></td>
+      <td><sub>8.6%</sub></td>
+      <td><sub>8.5%</sub></td>
+      <td><sub>8.4%</sub></td>
+      <td><sub>87883</sub></td>
+      <td><sub>100909</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Vanhakaupunki (305)</sub></th>
+      <td><sub>15.2%</sub></td>
+      <td><sub>15.0%</sub></td>
+      <td><sub>16.0%</sub></td>
+      <td><sub>15.8%</sub></td>
+      <td><sub>16.6%</sub></td>
+      <td><sub>16.3%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>13.3%</sub></td>
+      <td><sub>13.6%</sub></td>
+      <td><sub>11.9%</sub></td>
+      <td><sub>12.4%</sub></td>
+      <td><sub>11.6%</sub></td>
+      <td><sub>11.3%</sub></td>
+      <td><sub>141257</sub></td>
+      <td><sub>136675</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Maunula (401)</sub></th>
+      <td><sub>15.9%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.0%</sub></td>
+      <td><sub>14.7%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.5%</sub></td>
+      <td><sub>14.3%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>12.6%</sub></td>
+      <td><sub>12.8%</sub></td>
+      <td><sub>12.8%</sub></td>
+      <td><sub>12.6%</sub></td>
+      <td><sub>13.7%</sub></td>
+      <td><sub>13.7%</sub></td>
+      <td><sub>6336</sub></td>
+      <td><sub>6339</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Länsi-Pakila (402)</sub></th>
+      <td><sub>14.1%</sub></td>
+      <td><sub>14.0%</sub></td>
+      <td><sub>13.9%</sub></td>
+      <td><sub>13.7%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>13.0%</sub></td>
+      <td><sub>12.6%</sub></td>
+      <td><sub>13.9%</sub></td>
+      <td><sub>14.0%</sub></td>
+      <td><sub>14.7%</sub></td>
+      <td><sub>15.9%</sub></td>
+      <td><sub>17.0%</sub></td>
+      <td><sub>2149</sub></td>
+      <td><sub>1845</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Oulunkylä (404)</sub></th>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.2%</sub></td>
+      <td><sub>15.2%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.8%</sub></td>
+      <td><sub>16.0%</sub></td>
+      <td><sub>15.7%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>13.4%</sub></td>
+      <td><sub>13.5%</sub></td>
+      <td><sub>12.2%</sub></td>
+      <td><sub>12.1%</sub></td>
+      <td><sub>12.6%</sub></td>
+      <td><sub>12.4%</sub></td>
+      <td><sub>26505</sub></td>
+      <td><sub>26803</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Latokartano (501)</sub></th>
+      <td><sub>15.6%</sub></td>
+      <td><sub>14.7%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.8%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>14.8%</sub></td>
+      <td><sub>14.5%</sub></td>
+      <td><sub>12.7%</sub></td>
+      <td><sub>12.9%</sub></td>
+      <td><sub>12.2%</sub></td>
+      <td><sub>13.7%</sub></td>
+      <td><sub>13.2%</sub></td>
+      <td><sub>13.6%</sub></td>
+      <td><sub>32818</sub></td>
+      <td><sub>30017</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Kulosaari (601)</sub></th>
+      <td><sub>13.2%</sub></td>
+      <td><sub>13.3%</sub></td>
+      <td><sub>14.5%</sub></td>
+      <td><sub>14.7%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>14.4%</sub></td>
+      <td><sub>14.2%</sub></td>
+      <td><sub>12.7%</sub></td>
+      <td><sub>12.7%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>14.8%</sub></td>
+      <td><sub>14.6%</sub></td>
+      <td><sub>14.9%</sub></td>
+      <td><sub>21965</sub></td>
+      <td><sub>21870</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Herttoniemi (602)</sub></th>
+      <td><sub>14.4%</sub></td>
+      <td><sub>14.3%</sub></td>
+      <td><sub>15.2%</sub></td>
+      <td><sub>15.2%</sub></td>
+      <td><sub>15.8%</sub></td>
+      <td><sub>15.9%</sub></td>
+      <td><sub>15.3%</sub></td>
+      <td><sub>15.4%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>13.9%</sub></td>
+      <td><sub>12.7%</sub></td>
+      <td><sub>12.8%</sub></td>
+      <td><sub>12.5%</sub></td>
+      <td><sub>12.5%</sub></td>
+      <td><sub>94502</sub></td>
+      <td><sub>95385</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Laajasalo (603)</sub></th>
+      <td><sub>14.1%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>13.8%</sub></td>
+      <td><sub>13.5%</sub></td>
+      <td><sub>13.6%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>14.1%</sub></td>
+      <td><sub>11.9%</sub></td>
+      <td><sub>12.5%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>16.0%</sub></td>
+      <td><sub>16.8%</sub></td>
+      <td><sub>16.0%</sub></td>
+      <td><sub>12312</sub></td>
+      <td><sub>11393</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Vartiokylä (701)</sub></th>
+      <td><sub>14.5%</sub></td>
+      <td><sub>14.6%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.6%</sub></td>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.0%</sub></td>
+      <td><sub>14.4%</sub></td>
+      <td><sub>14.4%</sub></td>
+      <td><sub>13.2%</sub></td>
+      <td><sub>13.4%</sub></td>
+      <td><sub>12.0%</sub></td>
+      <td><sub>12.0%</sub></td>
+      <td><sub>42459</sub></td>
+      <td><sub>41033</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Myllypuro (702)</sub></th>
+      <td><sub>15.1%</sub></td>
+      <td><sub>15.0%</sub></td>
+      <td><sub>14.5%</sub></td>
+      <td><sub>14.8%</sub></td>
+      <td><sub>16.3%</sub></td>
+      <td><sub>16.7%</sub></td>
+      <td><sub>15.0%</sub></td>
+      <td><sub>15.2%</sub></td>
+      <td><sub>13.2%</sub></td>
+      <td><sub>13.6%</sub></td>
+      <td><sub>12.8%</sub></td>
+      <td><sub>12.7%</sub></td>
+      <td><sub>13.0%</sub></td>
+      <td><sub>12.1%</sub></td>
+      <td><sub>10194</sub></td>
+      <td><sub>10939</sub></td>
+    </tr>
+  </tbody>
+</table>
+
 ## Predicting city bike usage in new districts
 Our machine learning algorithm provides predictions on the number of rides that are likely to be taken to and from different districts by modelling relationships between different districts at different points in time, which allows it to produce fine-grained data and take into account variations in usage patterns at different times of the day and different days of the week (also monthly or even weekly variation can be similarly taken into account if needed). This can reveal interesting and useful patterns in the usage profiles of different districts for both new and already covered areas and help in planning the maintenance and logistics of the city bike system. The following tables contain predictions for city bike traffic into and out of all the base districts currently outside the city bike system, generated by the machine learning model based on the abovementioned demographic data and existing bike usage patterns between all the current districts over the 2019 city bike season. The first table contains a prediction for the total number of city bike rides to and from each of the new areas, broken down by into percentages by days of the week (with the total number of rides predicted for the entire season on the right):
 
@@ -316,144 +793,144 @@ The following table presents the same data on the total number of rides predicte
   <tbody>
     <tr>
       <th><sub>Kaarela (205)</sub></th>
-      <td><sub>24,1%</sub></td>
-      <td><sub>25,4%</sub></td>
-      <td><sub>43,0%</sub></td>
-      <td><sub>44,7%</sub></td>
-      <td><sub>28,6%</sub></td>
-      <td><sub>26,0%</sub></td>
-      <td><sub>4,3%</sub></td>
-      <td><sub>3,9%</sub></td>
+      <td><sub>24.1%</sub></td>
+      <td><sub>25.4%</sub></td>
+      <td><sub>43.0%</sub></td>
+      <td><sub>44.7%</sub></td>
+      <td><sub>28.6%</sub></td>
+      <td><sub>26.0%</sub></td>
+      <td><sub>4.3%</sub></td>
+      <td><sub>3.9%</sub></td>
       <td><sub>25064</sub></td>
       <td><sub>25741</sub></td>
     </tr>
     <tr>
       <th><sub>Tuomarinkylä (403)</sub></th>
-      <td><sub>21,2%</sub></td>
-      <td><sub>25,7%</sub></td>
-      <td><sub>44,9%</sub></td>
-      <td><sub>43,0%</sub></td>
-      <td><sub>28,6%</sub></td>
-      <td><sub>27,5%</sub></td>
-      <td><sub>5,2%</sub></td>
-      <td><sub>3,9%</sub></td>
+      <td><sub>21.2%</sub></td>
+      <td><sub>25.7%</sub></td>
+      <td><sub>44.9%</sub></td>
+      <td><sub>43.0%</sub></td>
+      <td><sub>28.6%</sub></td>
+      <td><sub>27.5%</sub></td>
+      <td><sub>5.2%</sub></td>
+      <td><sub>3.9%</sub></td>
       <td><sub>17658</sub></td>
       <td><sub>16472</sub></td>
     </tr>
     <tr>
       <th><sub>Itä-Pakila (405)</sub></th>
-      <td><sub>19,2%</sub></td>
-      <td><sub>24,5%</sub></td>
-      <td><sub>44,4%</sub></td>
-      <td><sub>42,2%</sub></td>
-      <td><sub>31,2%</sub></td>
-      <td><sub>29,4%</sub></td>
-      <td><sub>5,1%</sub></td>
-      <td><sub>3,9%</sub></td>
+      <td><sub>19.2%</sub></td>
+      <td><sub>24.5%</sub></td>
+      <td><sub>44.4%</sub></td>
+      <td><sub>42.2%</sub></td>
+      <td><sub>31.2%</sub></td>
+      <td><sub>29.4%</sub></td>
+      <td><sub>5.1%</sub></td>
+      <td><sub>3.9%</sub></td>
       <td><sub>20706</sub></td>
       <td><sub>20586</sub></td>
     </tr>
     <tr>
       <th><sub>Pukinmäki (502)</sub></th>
-      <td><sub>22,7%</sub></td>
-      <td><sub>25,6%</sub></td>
-      <td><sub>42,7%</sub></td>
-      <td><sub>44,3%</sub></td>
-      <td><sub>29,7%</sub></td>
-      <td><sub>25,8%</sub></td>
-      <td><sub>4,9%</sub></td>
-      <td><sub>4,2%</sub></td>
+      <td><sub>22.7%</sub></td>
+      <td><sub>25.6%</sub></td>
+      <td><sub>42.7%</sub></td>
+      <td><sub>44.3%</sub></td>
+      <td><sub>29.7%</sub></td>
+      <td><sub>25.8%</sub></td>
+      <td><sub>4.9%</sub></td>
+      <td><sub>4.2%</sub></td>
       <td><sub>22770</sub></td>
       <td><sub>22998</sub></td>
     </tr>
     <tr>
       <th><sub>Malmi (503)</sub></th>
-      <td><sub>23,9%</sub></td>
-      <td><sub>27,0%</sub></td>
-      <td><sub>40,5%</sub></td>
-      <td><sub>41,8%</sub></td>
-      <td><sub>29,9%</sub></td>
-      <td><sub>26,9%</sub></td>
-      <td><sub>5,7%</sub></td>
-      <td><sub>4,2%</sub></td>
+      <td><sub>23.9%</sub></td>
+      <td><sub>27.0%</sub></td>
+      <td><sub>40.5%</sub></td>
+      <td><sub>41.8%</sub></td>
+      <td><sub>29.9%</sub></td>
+      <td><sub>26.9%</sub></td>
+      <td><sub>5.7%</sub></td>
+      <td><sub>4.2%</sub></td>
       <td><sub>18954</sub></td>
       <td><sub>17429</sub></td>
     </tr>
     <tr>
       <th><sub>Suutarila (504)</sub></th>
-      <td><sub>16,9%</sub></td>
-      <td><sub>29,3%</sub></td>
-      <td><sub>44,8%</sub></td>
-      <td><sub>40,9%</sub></td>
-      <td><sub>31,7%</sub></td>
-      <td><sub>25,9%</sub></td>
-      <td><sub>6,4%</sub></td>
-      <td><sub>3,9%</sub></td>
+      <td><sub>16.9%</sub></td>
+      <td><sub>29.3%</sub></td>
+      <td><sub>44.8%</sub></td>
+      <td><sub>40.9%</sub></td>
+      <td><sub>31.7%</sub></td>
+      <td><sub>25.9%</sub></td>
+      <td><sub>6.4%</sub></td>
+      <td><sub>3.9%</sub></td>
       <td><sub>9151</sub></td>
       <td><sub>9127</sub></td>
     </tr>
     <tr>
       <th><sub>Puistola (505)</sub></th>
-      <td><sub>17,5%</sub></td>
-      <td><sub>27,0%</sub></td>
-      <td><sub>44,4%</sub></td>
-      <td><sub>42,8%</sub></td>
-      <td><sub>32,0%</sub></td>
-      <td><sub>26,5%</sub></td>
-      <td><sub>6,1%</sub></td>
-      <td><sub>3,7%</sub></td>
+      <td><sub>17.5%</sub></td>
+      <td><sub>27.0%</sub></td>
+      <td><sub>44.4%</sub></td>
+      <td><sub>42.8%</sub></td>
+      <td><sub>32.0%</sub></td>
+      <td><sub>26.5%</sub></td>
+      <td><sub>6.1%</sub></td>
+      <td><sub>3.7%</sub></td>
       <td><sub>9338</sub></td>
       <td><sub>9297</sub></td>
     </tr>
     <tr>
       <th><sub>Jakomäki (506)</sub></th>
-      <td><sub>18,4%</sub></td>
-      <td><sub>29,2%</sub></td>
-      <td><sub>43,5%</sub></td>
-      <td><sub>41,9%</sub></td>
-      <td><sub>32,4%</sub></td>
-      <td><sub>25,0%</sub></td>
-      <td><sub>5,7%</sub></td>
-      <td><sub>4,0%</sub></td>
+      <td><sub>18.4%</sub></td>
+      <td><sub>29.2%</sub></td>
+      <td><sub>43.5%</sub></td>
+      <td><sub>41.9%</sub></td>
+      <td><sub>32.4%</sub></td>
+      <td><sub>25.0%</sub></td>
+      <td><sub>5.7%</sub></td>
+      <td><sub>4.0%</sub></td>
       <td><sub>10992</sub></td>
       <td><sub>10645</sub></td>
     </tr>
     <tr>
       <th><sub>Mellunkylä (703)</sub></th>
-      <td><sub>18,9%</sub></td>
-      <td><sub>30,2%</sub></td>
-      <td><sub>46,3%</sub></td>
-      <td><sub>43,8%</sub></td>
-      <td><sub>28,9%</sub></td>
-      <td><sub>21,8%</sub></td>
-      <td><sub>5,9%</sub></td>
-      <td><sub>4,2%</sub></td>
+      <td><sub>18.9%</sub></td>
+      <td><sub>30.2%</sub></td>
+      <td><sub>46.3%</sub></td>
+      <td><sub>43.8%</sub></td>
+      <td><sub>28.9%</sub></td>
+      <td><sub>21.8%</sub></td>
+      <td><sub>5.9%</sub></td>
+      <td><sub>4.2%</sub></td>
       <td><sub>28528</sub></td>
       <td><sub>32181</sub></td>
     </tr>
     <tr>
       <th><sub>Vuosaari (704)</sub></th>
-      <td><sub>17,2%</sub></td>
-      <td><sub>32,8%</sub></td>
-      <td><sub>49,1%</sub></td>
-      <td><sub>43,3%</sub></td>
-      <td><sub>27,4%</sub></td>
-      <td><sub>20,6%</sub></td>
-      <td><sub>6,3%</sub></td>
-      <td><sub>3,3%</sub></td>
+      <td><sub>17.2%</sub></td>
+      <td><sub>32.8%</sub></td>
+      <td><sub>49.1%</sub></td>
+      <td><sub>43.3%</sub></td>
+      <td><sub>27.4%</sub></td>
+      <td><sub>20.6%</sub></td>
+      <td><sub>6.3%</sub></td>
+      <td><sub>3.3%</sub></td>
       <td><sub>22246</sub></td>
       <td><sub>26241</sub></td>
     </tr>
     <tr>
       <th><sub>Östersundom (801)</sub></th>
-      <td><sub>22,3%</sub></td>
-      <td><sub>18,7%</sub></td>
-      <td><sub>43,8%</sub></td>
-      <td><sub>39,9%</sub></td>
-      <td><sub>28,5%</sub></td>
-      <td><sub>36,9%</sub></td>
-      <td><sub>5,4%</sub></td>
-      <td><sub>4,4%</sub></td>
+      <td><sub>22.3%</sub></td>
+      <td><sub>18.7%</sub></td>
+      <td><sub>43.8%</sub></td>
+      <td><sub>39.9%</sub></td>
+      <td><sub>28.5%</sub></td>
+      <td><sub>36.9%</sub></td>
+      <td><sub>5.4%</sub></td>
+      <td><sub>4.4%</sub></td>
       <td><sub>18044</sub></td>
       <td><sub>17689</sub></td>
     </tr>
