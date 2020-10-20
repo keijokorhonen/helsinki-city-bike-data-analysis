@@ -1,12 +1,11 @@
-## A better Helsinki with more city bikes
-Helsinki city bikes have been widely used throughout Helsinki and have made transportation more convenient.
-Many residents have had access to this convenient service, however there are some areas of Helsinki, which do not have city bikes yet. 
-To be able to further expand the city bike network and provide the service to more people in a wider area, we trained a machine learning algorithm to predict how city bikes would be used in districts of Helsinki still without city bikes.
-This way it will be possible to anticipate what expanding the network really means.
+# A better and greener Helsinki through city bikes
+## Modeling the expansion of the city bike system
 
-The districts without city bikes can be seen in grey below.
+Helsinki city bikes are being actively used throughout Helsinki and, working together with the Helsinki public tranport network, have made personal transportation both more convenient and more environmentally friendly. While the majority of Helsinki residents have access to this convenient service, there are still some areas of Helsinki that are not yet covered by the Helsini city bikes system. In order to aid in the planning for the expansion of the city bike network to cover the whole of Helsinki, we have created and trained a machine learning algorithm and to predict the most likely usage patterns of city bikes in districts currently outside the city bike network. This system will allow city planners to anticipate the needs of the new districts for new bike stations and bike transportation services, as well as the effects of adding new areas on existing areas of the city bike network through increased traffic to and from the new areas.
+
+The current extent of the city bike system cn be seen in the map below, with the districts containing bike stations in yellow and the districts currently outside the system in grey:
 <div style="text-align: center;">
-<iframe src="city_bike_network.html"
+<iframe src="city_bike_network_noespoo.html"
     sandbox="allow-same-origin allow-scripts"
     width="616"
     height="634"
@@ -17,8 +16,30 @@ The districts without city bikes can be seen in grey below.
 </div>
 
 ## What properties make a district use city bikes?
-Our trained machine learning algorithm considers the demographics of each district and correlates that to city bike usage statistics.
-We believe that good indicators for city bike usage are demographics of districts such as total population, unemployment rate, age distribution, number of restaurants and shops and distribution of job types among many others. In total we use 212 different parameters for our model to get the best possible result.
+In order to predict the use of city bikes in new districts, our system considers both district demographics and existing bike usage patterns in the different districts of the city and uses these to construct a machine learning (ML) model that learns from the existing data on past usage patterns. There is good reason to believe that the demograpic and geographic properties of different districts, such as distance from other districts, total population, unemployment rate, age distribution, number of restaurants and other amenities as well as the employment profile of the are. Our model makes use of a total of 63 different demographic variables as well as data on existing city bike usage differentiated by time of day, day of week and direction (into or out of the district). The demographic variables cover:
+
+* total population and population density per km²
+* age distribution
+* average personal and median household income
+* number of people on social assistance
+* unemployment rate
+* number of jobs by category
+    * manufacturing, retail, transport, business, public
+* number of jobs per km²
+* number of buildings and total floor area by type
+    * homes (houses and condominiums), business, public, industrial, other
+* number of educational facilities
+  * daycares, primary schools, middle schools, high schools, special schools
+  * number of pupils or students on each level of education
+* number of public facilities
+  * libraries, health stations, playgrounds, swimming halls, sports halls, sports fields, churches, post offices, apothecaries, Alkos, grocery shops, other retail shops, restaurants, cafes and bars
+* amount of natural facilities
+  * natural forest and park areas in hectares, public beaches
+* voting patterns
+  * percentage voting SDP, KOK, VIHR, RKP, VAS, PS or other
+
+## Predicting city bike usage in new districts
+Our machine learning algorithm provides predictions on the number of rides that are likely to be taken to and from different districts by modelling relationships between different districts at different points in time, which allows it to produce fine-grained data and take into account variations in usage patterns at different times of the day and different days of the week (also monthly or even weekly variation can be similarly taken into account if needed). This can reveal interesting and useful patterns in the usage profiles of different districts for both new and already covered areas and help in planning the maintenance and logistics of the city bike system. The following tables contain predictions of city bike traffic into and out of all the base districts currently outside the city bike system, generated by the machine learning model based on the abovementioned demographic data and existing bike usage patterns between all the current districts over the 2019 city bike season. The first table contains a prediction for the total number of city bike rides to and from each of the new areas, broken down by days of the week (with the total on the right):
 
  <table style="text-align: center;">
   <thead></thead>
@@ -265,6 +286,441 @@ We believe that good indicators for city bike usage are demographics of district
     </tr>
   </tbody>
 </table>
+
+The following table presents the same data on the total number of rides predicted over the entire season, this time broken down by the time of day to demonstrate the differences in the temporal  distribution of traffic in and out of the different districts:
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th colspan="2"><sub>Morning</sub></th>
+      <th colspan="2"><sub>Day</sub></th>
+      <th colspan="2"><sub>Evening</sub></th>
+      <th colspan="2"><sub>Night</sub></th>
+      <th colspan="2"><sub>Total</sub></th>
+    </tr>  
+    <tr>
+      <th><sub>District</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><sub>Kaarela (205)</sub></th>
+      <td><sub>205</sub></td>
+      <td><sub>6037</sub></td>
+      <td><sub>6545</sub></td>
+      <td><sub>10769</sub></td>
+      <td><sub>11506</sub></td>
+      <td><sub>7170</sub></td>
+      <td><sub>6682</sub></td>
+      <td><sub>1087</sub></td>
+      <td><sub>1007</sub></td>
+      <td><sub>25064</sub></td>
+      <td><sub>25741</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Tuomarinkylä (403)</sub></th>
+      <td><sub>403</sub></td>
+      <td><sub>3748</sub></td>
+      <td><sub>4228</sub></td>
+      <td><sub>7931</sub></td>
+      <td><sub>7078</sub></td>
+      <td><sub>5050</sub></td>
+      <td><sub>4527</sub></td>
+      <td><sub>927</sub></td>
+      <td><sub>637</sub></td>
+      <td><sub>17658</sub></td>
+      <td><sub>16472</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Itä-Pakila (405)</sub></th>
+      <td><sub>405</sub></td>
+      <td><sub>3984</sub></td>
+      <td><sub>5045</sub></td>
+      <td><sub>9190</sub></td>
+      <td><sub>8683</sub></td>
+      <td><sub>6468</sub></td>
+      <td><sub>6049</sub></td>
+      <td><sub>1062</sub></td>
+      <td><sub>806</sub></td>
+      <td><sub>20706</sub></td>
+      <td><sub>20586</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Pukinmäki (502)</sub></th>
+      <td><sub>502</sub></td>
+      <td><sub>5161</sub></td>
+      <td><sub>5897</sub></td>
+      <td><sub>9725</sub></td>
+      <td><sub>10183</sub></td>
+      <td><sub>6758</sub></td>
+      <td><sub>5941</sub></td>
+      <td><sub>1124</sub></td>
+      <td><sub>975</sub></td>
+      <td><sub>22770</sub></td>
+      <td><sub>22998</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Malmi (503)</sub></th>
+      <td><sub>503</sub></td>
+      <td><sub>4525</sub></td>
+      <td><sub>4707</sub></td>
+      <td><sub>7680</sub></td>
+      <td><sub>7292</sub></td>
+      <td><sub>5660</sub></td>
+      <td><sub>4688</sub></td>
+      <td><sub>1089</sub></td>
+      <td><sub>740</sub></td>
+      <td><sub>18954</sub></td>
+      <td><sub>17429</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Suutarila (504)</sub></th>
+      <td><sub>504</sub></td>
+      <td><sub>1551</sub></td>
+      <td><sub>2677</sub></td>
+      <td><sub>4104</sub></td>
+      <td><sub>3734</sub></td>
+      <td><sub>2905</sub></td>
+      <td><sub>2361</sub></td>
+      <td><sub>590</sub></td>
+      <td><sub>353</sub></td>
+      <td><sub>9151</sub></td>
+      <td><sub>9127</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Puistola (505)</sub></th>
+      <td><sub>505</sub></td>
+      <td><sub>1636</sub></td>
+      <td><sub>2511</sub></td>
+      <td><sub>4148</sub></td>
+      <td><sub>3981</sub></td>
+      <td><sub>2986</sub></td>
+      <td><sub>2463</sub></td>
+      <td><sub>565</sub></td>
+      <td><sub>340</sub></td>
+      <td><sub>9338</sub></td>
+      <td><sub>9297</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Jakomäki (506)</sub></th>
+      <td><sub>506</sub></td>
+      <td><sub>2018</sub></td>
+      <td><sub>3104</sub></td>
+      <td><sub>4787</sub></td>
+      <td><sub>4456</sub></td>
+      <td><sub>3556</sub></td>
+      <td><sub>2658</sub></td>
+      <td><sub>630</sub></td>
+      <td><sub>426</sub></td>
+      <td><sub>10992</sub></td>
+      <td><sub>10645</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Mellunkylä (703)</sub></th>
+      <td><sub>703</sub></td>
+      <td><sub>5400</sub></td>
+      <td><sub>9721</sub></td>
+      <td><sub>13204</sub></td>
+      <td><sub>14110</sub></td>
+      <td><sub>8233</sub></td>
+      <td><sub>7007</sub></td>
+      <td><sub>1689</sub></td>
+      <td><sub>1342</sub></td>
+      <td><sub>28528</sub></td>
+      <td><sub>32181</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Vuosaari (704)</sub></th>
+      <td><sub>704</sub></td>
+      <td><sub>3824</sub></td>
+      <td><sub>8620</sub></td>
+      <td><sub>10919</sub></td>
+      <td><sub>11355</sub></td>
+      <td><sub>6101</sub></td>
+      <td><sub>5394</sub></td>
+      <td><sub>1401</sub></td>
+      <td><sub>870</sub></td>
+      <td><sub>22246</sub></td>
+      <td><sub>26241</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Östersundom (801)</sub></th>
+      <td><sub>801</sub></td>
+      <td><sub>4017</sub></td>
+      <td><sub>3313</sub></td>
+      <td><sub>7908</sub></td>
+      <td><sub>7065</sub></td>
+      <td><sub>5148</sub></td>
+      <td><sub>6531</sub></td>
+      <td><sub>968</sub></td>
+      <td><sub>779</sub></td>
+      <td><sub>18044</sub></td>
+      <td><sub>17689</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+Since the total numbers over the whole season are not necessarily the most informative presentation, the following table gives the same information as an average number of rides per day of the week, the total representing the average number of rides to and from the district during one week over the entire season. 
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th colspan="2"><sub>Monday</sub></th>
+      <th colspan="2"><sub>Tuesday</sub></th>
+      <th colspan="2"><sub>Wednesday</sub></th>
+      <th colspan="2"><sub>Thursday</sub></th>
+      <th colspan="2"><sub>Friday</sub></th>
+      <th colspan="2"><sub>Saturday</sub></th>
+      <th colspan="2"><sub>Sunday</sub></th>
+      <th colspan="2"><sub>Total</sub></th>
+    </tr>  
+    <tr>
+      <th><sub>District</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><sub>Kaarela (205)</sub></th>
+      <td><sub>128</sub></td>
+      <td><sub>134</sub></td>
+      <td><sub>132</sub></td>
+      <td><sub>136</sub></td>
+      <td><sub>134</sub></td>
+      <td><sub>138</sub></td>
+      <td><sub>133</sub></td>
+      <td><sub>131</sub></td>
+      <td><sub>108</sub></td>
+      <td><sub>113</sub></td>
+      <td><sub>91</sub></td>
+      <td><sub>97</sub></td>
+      <td><sub>90</sub></td>
+      <td><sub>89</sub></td>
+      <td><sub>819</sub></td>
+      <td><sub>842</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Tuomarinkylä (403)</sub></th>
+      <td><sub>85</sub></td>
+      <td><sub>87</sub></td>
+      <td><sub>89</sub></td>
+      <td><sub>83</sub></td>
+      <td><sub>100</sub></td>
+      <td><sub>90</sub></td>
+      <td><sub>85</sub></td>
+      <td><sub>81</sub></td>
+      <td><sub>81</sub></td>
+      <td><sub>66</sub></td>
+      <td><sub>70</sub></td>
+      <td><sub>69</sub></td>
+      <td><sub>65</sub></td>
+      <td><sub>60</sub></td>
+      <td><sub>577</sub></td>
+      <td><sub>538</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Itä-Pakila (405)</sub></th>
+      <td><sub>104</sub></td>
+      <td><sub>109</sub></td>
+      <td><sub>104</sub></td>
+      <td><sub>107</sub></td>
+      <td><sub>106</sub></td>
+      <td><sub>108</sub></td>
+      <td><sub>97</sub></td>
+      <td><sub>100</sub></td>
+      <td><sub>92</sub></td>
+      <td><sub>86</sub></td>
+      <td><sub>89</sub></td>
+      <td><sub>84</sub></td>
+      <td><sub>82</sub></td>
+      <td><sub>77</sub></td>
+      <td><sub>677</sub></td>
+      <td><sub>673</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Pukinmäki (502)</sub></th>
+      <td><sub>116</sub></td>
+      <td><sub>122</sub></td>
+      <td><sub>119</sub></td>
+      <td><sub>118</sub></td>
+      <td><sub>117</sub></td>
+      <td><sub>125</sub></td>
+      <td><sub>118</sub></td>
+      <td><sub>118</sub></td>
+      <td><sub>103</sub></td>
+      <td><sub>104</sub></td>
+      <td><sub>85</sub></td>
+      <td><sub>85</sub></td>
+      <td><sub>83</sub></td>
+      <td><sub>77</sub></td>
+      <td><sub>744</sub></td>
+      <td><sub>752</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Malmi (503)</sub></th>
+      <td><sub>98</sub></td>
+      <td><sub>88</sub></td>
+      <td><sub>99</sub></td>
+      <td><sub>86</sub></td>
+      <td><sub>110</sub></td>
+      <td><sub>90</sub></td>
+      <td><sub>106</sub></td>
+      <td><sub>90</sub></td>
+      <td><sub>71</sub></td>
+      <td><sub>83</sub></td>
+      <td><sub>66</sub></td>
+      <td><sub>66</sub></td>
+      <td><sub>65</sub></td>
+      <td><sub>63</sub></td>
+      <td><sub>620</sub></td>
+      <td><sub>570</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Suutarila (504)</sub></th>
+      <td><sub>46</sub></td>
+      <td><sub>46</sub></td>
+      <td><sub>48</sub></td>
+      <td><sub>45</sub></td>
+      <td><sub>47</sub></td>
+      <td><sub>50</sub></td>
+      <td><sub>48</sub></td>
+      <td><sub>45</sub></td>
+      <td><sub>37</sub></td>
+      <td><sub>38</sub></td>
+      <td><sub>34</sub></td>
+      <td><sub>37</sub></td>
+      <td><sub>36</sub></td>
+      <td><sub>33</sub></td>
+      <td><sub>299</sub></td>
+      <td><sub>298</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Puistola (505)</sub></th>
+      <td><sub>49</sub></td>
+      <td><sub>49</sub></td>
+      <td><sub>49</sub></td>
+      <td><sub>47</sub></td>
+      <td><sub>49</sub></td>
+      <td><sub>49</sub></td>
+      <td><sub>46</sub></td>
+      <td><sub>46</sub></td>
+      <td><sub>37</sub></td>
+      <td><sub>40</sub></td>
+      <td><sub>35</sub></td>
+      <td><sub>36</sub></td>
+      <td><sub>37</sub></td>
+      <td><sub>33</sub></td>
+      <td><sub>305</sub></td>
+      <td><sub>304</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Jakomäki (506)</sub></th>
+      <td><sub>56</sub></td>
+      <td><sub>56</sub></td>
+      <td><sub>59</sub></td>
+      <td><sub>55</sub></td>
+      <td><sub>57</sub></td>
+      <td><sub>58</sub></td>
+      <td><sub>58</sub></td>
+      <td><sub>53</sub></td>
+      <td><sub>46</sub></td>
+      <td><sub>47</sub></td>
+      <td><sub>40</sub></td>
+      <td><sub>40</sub></td>
+      <td><sub>40</sub></td>
+      <td><sub>37</sub></td>
+      <td><sub>359</sub></td>
+      <td><sub>348</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Mellunkylä (703)</sub></th>
+      <td><sub>126</sub></td>
+      <td><sub>157</sub></td>
+      <td><sub>162</sub></td>
+      <td><sub>186</sub></td>
+      <td><sub>159</sub></td>
+      <td><sub>204</sub></td>
+      <td><sub>146</sub></td>
+      <td><sub>163</sub></td>
+      <td><sub>123</sub></td>
+      <td><sub>135</sub></td>
+      <td><sub>105</sub></td>
+      <td><sub>108</sub></td>
+      <td><sub>108</sub></td>
+      <td><sub>96</sub></td>
+      <td><sub>933</sub></td>
+      <td><sub>1052</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Vuosaari (704)</sub></th>
+      <td><sub>92</sub></td>
+      <td><sub>125</sub></td>
+      <td><sub>123</sub></td>
+      <td><sub>160</sub></td>
+      <td><sub>141</sub></td>
+      <td><sub>176</sub></td>
+      <td><sub>110</sub></td>
+      <td><sub>132</sub></td>
+      <td><sub>100</sub></td>
+      <td><sub>107</sub></td>
+      <td><sub>77</sub></td>
+      <td><sub>78</sub></td>
+      <td><sub>81</sub></td>
+      <td><sub>76</sub></td>
+      <td><sub>727</sub></td>
+      <td><sub>858</sub></td>
+    </tr>
+    <tr>
+      <th><sub>Östersundom (801)</sub></th>
+      <td><sub>90</sub></td>
+      <td><sub>86</sub></td>
+      <td><sub>87</sub></td>
+      <td><sub>77</sub></td>
+      <td><sub>100</sub></td>
+      <td><sub>94</sub></td>
+      <td><sub>75</sub></td>
+      <td><sub>89</sub></td>
+      <td><sub>75</sub></td>
+      <td><sub>77</sub></td>
+      <td><sub>81</sub></td>
+      <td><sub>78</sub></td>
+      <td><sub>78</sub></td>
+      <td><sub>73</sub></td>
+      <td><sub>590</sub></td>
+      <td><sub>578</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 
 
 ## Let's see what our model can do
