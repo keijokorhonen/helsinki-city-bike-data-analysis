@@ -24,244 +24,244 @@ We believe that good indicators for city bike usage are demographics of district
   <thead></thead>
   <tr>
     <th>&nbsp;</th>
-      <th colspan="2"><sub>Monday</sub></th>
-    <th colspan="2"><sub>Tuesday</sub></th>
-    <th colspan="2"><sub>Wednesday</sub></th>
-    <th colspan="2"><sub>Thursday</sub></th>
-    <th colspan="2"><sub>Friday</sub></th>
-    <th colspan="2"><sub>Saturday</sub></th>
-    <th colspan="2"><sub>Sunday</sub></th>
-    <th colspan="2"><sub>Total</sub></th>
+    <th colspan="2">Monday</th>
+    <th colspan="2">Tuesday</th>
+    <th colspan="2">Wednesday</th>
+    <th colspan="2">Thursday</th>
+    <th colspan="2">Friday</th>
+    <th colspan="2">Saturday</th>
+    <th colspan="2">Sunday</th>
+    <th colspan="2">Total</th>
   </tr>  
   <tr>
       <th style="text-align: left;">District</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left;">Kaarela (205)</td>
-      <td>3922</td>
-      <td>4111</td>
-      <td>4059</td>
-      <td>4188</td>
-      <td>4126</td>
-      <td>4249</td>
-      <td>4069</td>
-      <td>4016</td>
-      <td>3329</td>
-      <td>3468</td>
-      <td>2801</td>
-      <td>2979</td>
-      <td>2754</td>
-      <td>2728</td>
-      <td>25064</td>
-      <td>25741</td>
+      <td style="text-align: left;"><sub>Kaarela (205)</sub></td>
+      <td><sub>3922</sub></td>
+      <td><sub>4111</sub></td>
+      <td><sub>4059</sub></td>
+      <td><sub>4188</sub></td>
+      <td><sub>4126</sub></td>
+      <td><sub>4249</sub></td>
+      <td><sub>4069</sub></td>
+      <td><sub>4016</sub></td>
+      <td><sub>3329</sub></td>
+      <td><sub>3468</sub></td>
+      <td><sub>2801</sub></td>
+      <td><sub>2979</sub></td>
+      <td><sub>2754</sub></td>
+      <td><sub>2728</sub></td>
+      <td><sub>25064</sub></td>
+      <td><sub>25741</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Tuomarinkylä (403)</td>
-      <td>2600</td>
-      <td>2679</td>
-      <td>2744</td>
-      <td>2559</td>
-      <td>3058</td>
-      <td>2753</td>
-      <td>2616</td>
-      <td>2483</td>
-      <td>2479</td>
-      <td>2032</td>
-      <td>2145</td>
-      <td>2116</td>
-      <td>2013</td>
-      <td>1848</td>
-      <td>17658</td>
-      <td>16472</td>
+      <td style="text-align: left;"><sub>Tuomarinkylä (403)</sub></td>
+      <td><sub>2600</sub></td>
+      <td><sub>2679</sub></td>
+      <td><sub>2744</sub></td>
+      <td><sub>2559</sub></td>
+      <td><sub>3058</sub></td>
+      <td><sub>2753</sub></td>
+      <td><sub>2616</sub></td>
+      <td><sub>2483</sub></td>
+      <td><sub>2479</sub></td>
+      <td><sub>2032</sub></td>
+      <td><sub>2145</sub></td>
+      <td><sub>2116</sub></td>
+      <td><sub>2013</sub></td>
+      <td><sub>1848</sub></td>
+      <td><sub>17658</sub></td>
+      <td><sub>16472</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Itä-Pakila (405)</td>
-      <td>3184</td>
-      <td>3333</td>
-      <td>3183</td>
-      <td>3285</td>
-      <td>3256</td>
-      <td>3317</td>
-      <td>2969</td>
-      <td>3057</td>
-      <td>2840</td>
-      <td>2636</td>
-      <td>2739</td>
-      <td>2595</td>
-      <td>2533</td>
-      <td>2361</td>
-      <td>20706</td>
-      <td>20586</td>
+      <td style="text-align: left;"><sub>Itä-Pakila (405)</sub></td>
+      <td><sub>3184</sub></td>
+      <td><sub>3333</sub></td>
+      <td><sub>3183</sub></td>
+      <td><sub>3285</sub></td>
+      <td><sub>3256</sub></td>
+      <td><sub>3317</sub></td>
+      <td><sub>2969</sub></td>
+      <td><sub>3057</sub></td>
+      <td><sub>2840</sub></td>
+      <td><sub>2636</sub></td>
+      <td><sub>2739</sub></td>
+      <td><sub>2595</sub></td>
+      <td><sub>2533</sub></td>
+      <td><sub>2361</sub></td>
+      <td><sub>20706</sub></td>
+      <td><sub>20586</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Pukinmäki (502)</td>
-      <td>3557</td>
-      <td>3731</td>
-      <td>3667</td>
-      <td>3622</td>
-      <td>3602</td>
-      <td>3845</td>
-      <td>3628</td>
-      <td>3616</td>
-      <td>3165</td>
-      <td>3192</td>
-      <td>2600</td>
-      <td>2623</td>
-      <td>2548</td>
-      <td>2366</td>
-      <td>22770</td>
-      <td>22998</td>
+      <td style="text-align: left;">P<sub>Pukinmäki (502)</sub></td>
+      <td><sub>3557</sub></td>
+      <td><sub>3731</sub></td>
+      <td><sub>3667</sub></td>
+      <td><sub>3622</sub></td>
+      <td><sub>3602</sub></td>
+      <td><sub>3845</sub></td>
+      <td><sub>3628</sub></td>
+      <td><sub>3616</sub></td>
+      <td><sub>3165</sub></td>
+      <td><sub>3192</sub></td>
+      <td><sub>2600</sub></td>
+      <td><sub>2623</sub></td>
+      <td><sub>2548</sub></td>
+      <td><sub>2366</sub></td>
+      <td><sub>22770</sub></td>
+      <td><sub>22998</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Malmi (503)</td>
-      <td>3023</td>
-      <td>2707</td>
-      <td>3052</td>
-      <td>2647</td>
-      <td>3369</td>
-      <td>2764</td>
-      <td>3248</td>
-      <td>2776</td>
-      <td>2197</td>
-      <td>2546</td>
-      <td>2047</td>
-      <td>2042</td>
-      <td>2016</td>
-      <td>1944</td>
-      <td>18954</td>
-      <td>17429</td>
+      <td style="text-align: left;"><sub>Malmi (503)</sub></td>
+      <td><sub>3023</sub></td>
+      <td><sub>2707</sub></td>
+      <td><sub>3052</sub></td>
+      <td><sub>2647</sub></td>
+      <td><sub>3369</sub></td>
+      <td><sub>2764</sub></td>
+      <td><sub>3248</sub></td>
+      <td><sub>2776</sub></td>
+      <td><sub>2197</sub></td>
+      <td><sub>2546</sub></td>
+      <td><sub>2047</sub></td>
+      <td><sub>2042</sub></td>
+      <td><sub>2016</sub></td>
+      <td><sub>1944</sub></td>
+      <td><sub>18954</sub></td>
+      <td><sub>17429</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Suutarila (504)</td>
-      <td>1423</td>
-      <td>1409</td>
-      <td>1482</td>
-      <td>1403</td>
-      <td>1437</td>
-      <td>1559</td>
-      <td>1480</td>
-      <td>1404</td>
-      <td>1154</td>
-      <td>1185</td>
-      <td>1068</td>
-      <td>1133</td>
-      <td>1105</td>
-      <td>1031</td>
-      <td>9151</td>
-      <td>9127</td>
+      <td style="text-align: left;"><sub>Suutarila (504)</sub></td>
+      <td><sub>1423</sub></td>
+      <td><sub>1409</sub></td>
+      <td><sub>1482</sub></td>
+      <td><sub>1403</sub></td>
+      <td><sub>1437</sub></td>
+      <td><sub>1559</sub></td>
+      <td><sub>1480</sub></td>
+      <td><sub>1404</sub></td>
+      <td><sub>1154</sub></td>
+      <td><sub>1185</sub></td>
+      <td><sub>1068</sub></td>
+      <td><sub>1133</sub></td>
+      <td><sub>1105</sub></td>
+      <td><sub>1031</sub></td>
+      <td><sub>9151</sub></td>
+      <td><sub>9127</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Puistola (505)</td>
-      <td>1498</td>
-      <td>1504</td>
-      <td>1517</td>
-      <td>1459</td>
-      <td>1527</td>
-      <td>1524</td>
-      <td>1409</td>
-      <td>1428</td>
-      <td>1148</td>
-      <td>1241</td>
-      <td>1077</td>
-      <td>1114</td>
-      <td>1160</td>
-      <td>1024</td>
-      <td>9338</td>
-      <td>9297</td>
+      <td style="text-align: left;"><sub>Puistola (505)</sub></td>
+      <td><sub>1498</sub></td>
+      <td><sub>1504</sub></td>
+      <td><sub>1517</sub></td>
+      <td><sub>1459</sub></td>
+      <td><sub>1527</sub></td>
+      <td><sub>1524</sub></td>
+      <td><sub>1409</sub></td>
+      <td><sub>1428</sub></td>
+      <td><sub>1148</sub></td>
+      <td><sub>1241</sub></td>
+      <td><sub>1077</sub></td>
+      <td><sub>1114</sub></td>
+      <td><sub>1160</sub></td>
+      <td><sub>1024</sub></td>
+      <td><sub>9338</sub></td>
+      <td><sub>9297</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Jakomäki (506)</td>
-      <td>1738</td>
-      <td>1715</td>
-      <td>1810</td>
-      <td>1682</td>
-      <td>1772</td>
-      <td>1803</td>
-      <td>1783</td>
-      <td>1626</td>
-      <td>1416</td>
-      <td>1437</td>
-      <td>1236</td>
-      <td>1247</td>
-      <td>1235</td>
-      <td>1133</td>
-      <td>10992</td>
-      <td>10645</td>
+      <td style="text-align: left;"><sub>Jakomäki (506)</sub></td>
+      <td><sub>1738</sub></td>
+      <td><sub>1715</sub></td>
+      <td><sub>1810</sub></td>
+      <td><sub>1682</sub></td>
+      <td><sub>1772</sub></td>
+      <td><sub>1803</sub></td>
+      <td><sub>1783</sub></td>
+      <td><sub>1626</sub></td>
+      <td><sub>1416</sub></td>
+      <td><sub>1437</sub></td>
+      <td><sub>1236</sub></td>
+      <td><sub>1247</sub></td>
+      <td><sub>1235</sub></td>
+      <td><sub>1133</sub></td>
+      <td><sub>10992</sub></td>
+      <td><sub>10645</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Mellunkylä (703)</td>
-      <td>3870</td>
-      <td>4817</td>
-      <td>4976</td>
-      <td>5697</td>
-      <td>4872</td>
-      <td>6266</td>
-      <td>4479</td>
-      <td>4988</td>
-      <td>3788</td>
-      <td>4153</td>
-      <td>3210</td>
-      <td>3304</td>
-      <td>3330</td>
-      <td>2953</td>
-      <td>28528</td>
-      <td>32181</td>
+      <td style="text-align: left;"><sub>Mellunkylä (703)</sub></td>
+      <td><sub>3870</sub></td>
+      <td><sub>4817</sub></td>
+      <td><sub>4976</sub></td>
+      <td><sub>5697</sub></td>
+      <td><sub>4872</sub></td>
+      <td><sub>6266</sub></td>
+      <td><sub>4479</sub></td>
+      <td><sub>4988</sub></td>
+      <td><sub>3788</sub></td>
+      <td><sub>4153</sub></td>
+      <td><sub>3210</sub></td>
+      <td><sub>3304</sub></td>
+      <td><sub>3330</sub></td>
+      <td><sub>2953</sub></td>
+      <td><sub>28528</sub></td>
+      <td><sub>32181</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Vuosaari (704)</td>
-      <td>2828</td>
-      <td>3839</td>
-      <td>3773</td>
-      <td>4913</td>
-      <td>4333</td>
-      <td>5400</td>
-      <td>3375</td>
-      <td>4052</td>
-      <td>3078</td>
-      <td>3293</td>
-      <td>2366</td>
-      <td>2404</td>
-      <td>2490</td>
-      <td>2336</td>
-      <td>22246</td>
-      <td>26241</td>
+      <td style="text-align: left;"><sub>Vuosaari (704)</sub></td>
+      <td><sub>2828</sub></td>
+      <td><sub>3839</sub></td>
+      <td><sub>3773</sub></td>
+      <td><sub>4913</sub></td>
+      <td><sub>4333</sub></td>
+      <td><sub>5400</sub></td>
+      <td><sub>3375</sub></td>
+      <td><sub>4052</sub></td>
+      <td><sub>3078</sub></td>
+      <td><sub>3293</sub></td>
+      <td><sub>2366</sub></td>
+      <td><sub>2404</sub></td>
+      <td><sub>2490</sub></td>
+      <td><sub>2336</sub></td>
+      <td><sub>22246</sub></td>
+      <td><sub>26241</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">Östersundom (801)</td>
-      <td>2770</td>
-      <td>2646</td>
-      <td>2677</td>
-      <td>2371</td>
-      <td>3079</td>
-      <td>2895</td>
-      <td>2318</td>
-      <td>2747</td>
-      <td>2301</td>
-      <td>2366</td>
-      <td>2487</td>
-      <td>2415</td>
-      <td>2409</td>
-      <td>2246</td>
-      <td>18044</td>
-      <td>17689</td>
+      <td style="text-align: left;"><sub>Östersundom (801)</sub></td>
+      <td><sub>2770</sub></td>
+      <td><sub>2646</sub></td>
+      <td><sub>2677</sub></td>
+      <td><sub>2371</sub></td>
+      <td><sub>3079</sub></td>
+      <td><sub>2895</sub></td>
+      <td><sub>2318</sub></td>
+      <td><sub>2747</sub></td>
+      <td><sub>2301</sub></td>
+      <td><sub>2366</sub></td>
+      <td><sub>2487</sub></td>
+      <td><sub>2415</sub></td>
+      <td><sub>2409</sub></td>
+      <td><sub>2246</sub></td>
+      <td><sub>18044</sub></td>
+      <td><sub>17689</sub></td>
     </tr>
   </tbody>
 </table>
