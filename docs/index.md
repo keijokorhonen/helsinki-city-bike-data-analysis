@@ -24,14 +24,14 @@ We believe that good indicators for city bike usage are demographics of district
   <thead></thead>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Monday</th>
-    <th colspan="2">Tuesday</th>
-    <th colspan="2">Wednesday</th>
-    <th colspan="2">Thursday</th>
-    <th colspan="2">Friday</th>
-    <th colspan="2">Saturday</th>
-    <th colspan="2">Sunday</th>
-    <th colspan="2">Total</th>
+    <th colspan="2"><sub>Monday</sub></th>
+    <th colspan="2"><sub>Tuesday</sub></th>
+    <th colspan="2"><sub>Wednesday</sub></th>
+    <th colspan="2"><sub>Thursday</sub></th>
+    <th colspan="2"><sub>Friday</sub></th>
+    <th colspan="2"><sub>Saturday</sub></th>
+    <th colspan="2"><sub>Sunday</sub></th>
+    <th colspan="2"><sub>Total</sub></th>
   </tr>  
   <tr>
       <th style="text-align: left;">District</th>
@@ -112,7 +112,7 @@ We believe that good indicators for city bike usage are demographics of district
       <td><sub>20586</sub></td>
     </tr>
     <tr>
-      <td style="text-align: left;">P<sub>Pukinmäki (502)</sub></td>
+      <td style="text-align: left;"><sub>Pukinmäki (502)</sub></td>
       <td><sub>3557</sub></td>
       <td><sub>3731</sub></td>
       <td><sub>3667</sub></td>
