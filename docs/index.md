@@ -20,6 +20,252 @@ The districts without city bikes can be seen in grey below.
 Our trained machine learning algorithm considers the demographics of each district and correlates that to city bike usage statistics.
 We believe that good indicators for city bike usage are demographics of districts such as total population, unemployment rate, age distribution, number of restaurants and shops and distribution of job types among many others. In total we use 212 different parameters for our model to get the best possible result.
 
+ <table style="text-align: center;">
+  <thead></thead>
+  <tr>
+    <th>&nbsp;</th>
+    <th colspan="2"><sub>Monday</sub></th>
+    <th colspan="2"><sub>Tuesday</sub></th>
+    <th colspan="2"><sub>Wednesday</sub></th>
+    <th colspan="2"><sub>Thursday</sub></th>
+    <th colspan="2"><sub>Friday</sub></th>
+    <th colspan="2"><sub>Saturday</sub></th>
+    <th colspan="2"><sub>Sunday</sub></th>
+    <th colspan="2"><sub>Total</sub></th>
+  </tr>  
+  <tr>
+      <th style="text-align: left;">District</th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+      <th><sub>In</sub></th>
+      <th><sub>Out</sub></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;"><sub>Kaarela (205)</sub></td>
+      <td><sub>3922</sub></td>
+      <td><sub>4111</sub></td>
+      <td><sub>4059</sub></td>
+      <td><sub>4188</sub></td>
+      <td><sub>4126</sub></td>
+      <td><sub>4249</sub></td>
+      <td><sub>4069</sub></td>
+      <td><sub>4016</sub></td>
+      <td><sub>3329</sub></td>
+      <td><sub>3468</sub></td>
+      <td><sub>2801</sub></td>
+      <td><sub>2979</sub></td>
+      <td><sub>2754</sub></td>
+      <td><sub>2728</sub></td>
+      <td><sub>25064</sub></td>
+      <td><sub>25741</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Tuomarinkylä (403)</sub></td>
+      <td><sub>2600</sub></td>
+      <td><sub>2679</sub></td>
+      <td><sub>2744</sub></td>
+      <td><sub>2559</sub></td>
+      <td><sub>3058</sub></td>
+      <td><sub>2753</sub></td>
+      <td><sub>2616</sub></td>
+      <td><sub>2483</sub></td>
+      <td><sub>2479</sub></td>
+      <td><sub>2032</sub></td>
+      <td><sub>2145</sub></td>
+      <td><sub>2116</sub></td>
+      <td><sub>2013</sub></td>
+      <td><sub>1848</sub></td>
+      <td><sub>17658</sub></td>
+      <td><sub>16472</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Itä-Pakila (405)</sub></td>
+      <td><sub>3184</sub></td>
+      <td><sub>3333</sub></td>
+      <td><sub>3183</sub></td>
+      <td><sub>3285</sub></td>
+      <td><sub>3256</sub></td>
+      <td><sub>3317</sub></td>
+      <td><sub>2969</sub></td>
+      <td><sub>3057</sub></td>
+      <td><sub>2840</sub></td>
+      <td><sub>2636</sub></td>
+      <td><sub>2739</sub></td>
+      <td><sub>2595</sub></td>
+      <td><sub>2533</sub></td>
+      <td><sub>2361</sub></td>
+      <td><sub>20706</sub></td>
+      <td><sub>20586</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Pukinmäki (502)</sub></td>
+      <td><sub>3557</sub></td>
+      <td><sub>3731</sub></td>
+      <td><sub>3667</sub></td>
+      <td><sub>3622</sub></td>
+      <td><sub>3602</sub></td>
+      <td><sub>3845</sub></td>
+      <td><sub>3628</sub></td>
+      <td><sub>3616</sub></td>
+      <td><sub>3165</sub></td>
+      <td><sub>3192</sub></td>
+      <td><sub>2600</sub></td>
+      <td><sub>2623</sub></td>
+      <td><sub>2548</sub></td>
+      <td><sub>2366</sub></td>
+      <td><sub>22770</sub></td>
+      <td><sub>22998</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Malmi (503)</sub></td>
+      <td><sub>3023</sub></td>
+      <td><sub>2707</sub></td>
+      <td><sub>3052</sub></td>
+      <td><sub>2647</sub></td>
+      <td><sub>3369</sub></td>
+      <td><sub>2764</sub></td>
+      <td><sub>3248</sub></td>
+      <td><sub>2776</sub></td>
+      <td><sub>2197</sub></td>
+      <td><sub>2546</sub></td>
+      <td><sub>2047</sub></td>
+      <td><sub>2042</sub></td>
+      <td><sub>2016</sub></td>
+      <td><sub>1944</sub></td>
+      <td><sub>18954</sub></td>
+      <td><sub>17429</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Suutarila (504)</sub></td>
+      <td><sub>1423</sub></td>
+      <td><sub>1409</sub></td>
+      <td><sub>1482</sub></td>
+      <td><sub>1403</sub></td>
+      <td><sub>1437</sub></td>
+      <td><sub>1559</sub></td>
+      <td><sub>1480</sub></td>
+      <td><sub>1404</sub></td>
+      <td><sub>1154</sub></td>
+      <td><sub>1185</sub></td>
+      <td><sub>1068</sub></td>
+      <td><sub>1133</sub></td>
+      <td><sub>1105</sub></td>
+      <td><sub>1031</sub></td>
+      <td><sub>9151</sub></td>
+      <td><sub>9127</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Puistola (505)</sub></td>
+      <td><sub>1498</sub></td>
+      <td><sub>1504</sub></td>
+      <td><sub>1517</sub></td>
+      <td><sub>1459</sub></td>
+      <td><sub>1527</sub></td>
+      <td><sub>1524</sub></td>
+      <td><sub>1409</sub></td>
+      <td><sub>1428</sub></td>
+      <td><sub>1148</sub></td>
+      <td><sub>1241</sub></td>
+      <td><sub>1077</sub></td>
+      <td><sub>1114</sub></td>
+      <td><sub>1160</sub></td>
+      <td><sub>1024</sub></td>
+      <td><sub>9338</sub></td>
+      <td><sub>9297</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Jakomäki (506)</sub></td>
+      <td><sub>1738</sub></td>
+      <td><sub>1715</sub></td>
+      <td><sub>1810</sub></td>
+      <td><sub>1682</sub></td>
+      <td><sub>1772</sub></td>
+      <td><sub>1803</sub></td>
+      <td><sub>1783</sub></td>
+      <td><sub>1626</sub></td>
+      <td><sub>1416</sub></td>
+      <td><sub>1437</sub></td>
+      <td><sub>1236</sub></td>
+      <td><sub>1247</sub></td>
+      <td><sub>1235</sub></td>
+      <td><sub>1133</sub></td>
+      <td><sub>10992</sub></td>
+      <td><sub>10645</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Mellunkylä (703)</sub></td>
+      <td><sub>3870</sub></td>
+      <td><sub>4817</sub></td>
+      <td><sub>4976</sub></td>
+      <td><sub>5697</sub></td>
+      <td><sub>4872</sub></td>
+      <td><sub>6266</sub></td>
+      <td><sub>4479</sub></td>
+      <td><sub>4988</sub></td>
+      <td><sub>3788</sub></td>
+      <td><sub>4153</sub></td>
+      <td><sub>3210</sub></td>
+      <td><sub>3304</sub></td>
+      <td><sub>3330</sub></td>
+      <td><sub>2953</sub></td>
+      <td><sub>28528</sub></td>
+      <td><sub>32181</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Vuosaari (704)</sub></td>
+      <td><sub>2828</sub></td>
+      <td><sub>3839</sub></td>
+      <td><sub>3773</sub></td>
+      <td><sub>4913</sub></td>
+      <td><sub>4333</sub></td>
+      <td><sub>5400</sub></td>
+      <td><sub>3375</sub></td>
+      <td><sub>4052</sub></td>
+      <td><sub>3078</sub></td>
+      <td><sub>3293</sub></td>
+      <td><sub>2366</sub></td>
+      <td><sub>2404</sub></td>
+      <td><sub>2490</sub></td>
+      <td><sub>2336</sub></td>
+      <td><sub>22246</sub></td>
+      <td><sub>26241</sub></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><sub>Östersundom (801)</sub></td>
+      <td><sub>2770</sub></td>
+      <td><sub>2646</sub></td>
+      <td><sub>2677</sub></td>
+      <td><sub>2371</sub></td>
+      <td><sub>3079</sub></td>
+      <td><sub>2895</sub></td>
+      <td><sub>2318</sub></td>
+      <td><sub>2747</sub></td>
+      <td><sub>2301</sub></td>
+      <td><sub>2366</sub></td>
+      <td><sub>2487</sub></td>
+      <td><sub>2415</sub></td>
+      <td><sub>2409</sub></td>
+      <td><sub>2246</sub></td>
+      <td><sub>18044</sub></td>
+      <td><sub>17689</sub></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Let's see what our model can do
 We will look at one example district not in the city bike network yet, Vuosaari.
